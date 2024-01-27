@@ -1,0 +1,22 @@
+###### this template will automatically upload to S3, 'everything' from this content directory #######
+locals {
+  content_types = {
+    ".html" : "text/html",
+    ".css" : "text/css",
+    ".js" : "text/javascript"
+    ".jpg" : "text/jpg"
+  }
+}
+
+resource "aws_s3_bucket_object" "" {
+    bucket = aws_s3_bucket.flemming-friday.id
+    for_each = {
+        
+        "index.html"  = "text/html"
+        
+    }
+    key = each.key
+    source = "./${each.key}"
+    content_type = each.value
+    etag = filemd5("./${each.key}")
+}
