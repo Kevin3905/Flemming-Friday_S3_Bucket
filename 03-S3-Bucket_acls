@@ -1,4 +1,4 @@
-##### BOC #######
+##### Bucket Ownership Controls #######
 resource "aws_s3_bucket_ownership_controls" "flemming-friday" {
   bucket = aws_s3_bucket.flemming-friday.id
   rule {
