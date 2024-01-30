@@ -1,4 +1,5 @@
-####### Public Read Policy makes S3 files publicly available #####
+####### Public Read Policy makes S3 files publicly available #######
+
 resource "aws_s3_bucket_policy" "bucket_policy" {
   bucket = aws_s3_bucket.flemming-friday.id
   policy = jsonencode(
