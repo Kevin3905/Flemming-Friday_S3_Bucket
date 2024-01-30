@@ -6,7 +6,7 @@ resource "aws_s3_bucket_ownership_controls" "flemming-friday" {
   }
 }
 
-#### public access block set to false to allow viewing of content in S3 bucket #####
+#### Public Access Block set to false to allow viewing of content in S3 bucket #####
 resource "aws_s3_bucket_public_access_block" "flemming-friday" {
   bucket = aws_s3_bucket.flemming-friday.id
 
