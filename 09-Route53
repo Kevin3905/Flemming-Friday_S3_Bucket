@@ -1,0 +1,15 @@
+resource "aws_route53domains_registered_domain" "whitaker-it-consulting" {
+  domain_name = "whitaker-it-consulting.com"
+
+  name_server {
+    name = "ns-71.awsdns-08.com"
+  }
+
+  name_server {
+    name = "ns-547.awsdns-04.net"
+  }
+
+  tags = {
+    Environment = "Route53"
+  }
+}
